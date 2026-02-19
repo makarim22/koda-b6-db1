@@ -10,7 +10,9 @@ BUKU {
     int ISBN UK
     string judul
     string penulis
+    string penerbit
     int tahun_terbit
+    boolean is_borrowed
     int kategori_id FK
     int rak_buku_id FK
     int peminjam_id FK
@@ -26,6 +28,7 @@ KATEGORI {
 RAK_BUKU {
     int id PK
     string lokasi
+    string genre
 }
 
 PEMINJAM {
