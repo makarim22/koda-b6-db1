@@ -47,22 +47,59 @@ ALTER COLUMN ISBN TYPE VARCHAR(64);
 
 INSERT INTO kategori (kategori, deskripsi) VALUES
 ('Fiksi', 'Novel dan cerita fiksi'),
-('Non-Fiksi', 'Buku pengetahuan dan referensi'),
-('Anak-Anak', 'Buku untuk anak-anak');
+('Sastra Klasik', 'Buku sastra klasik'),
+('Biografi', 'Buku biografi berbagai tokoh dunia');
+('Fiksi Lokal', 'Novel dan cerita fiksi karya penulis Indonesia'),
+('Non-Fiksi', 'Buku pengetahuan, referensi, dan pengembangan diri'),
+('Anak-Anak', 'Buku cerita dan edukasi untuk anak-anak'),
+('Komik', 'Buku komik dan manga dari berbagai negara'),
+('Sejarah', 'Buku tentang sejarah Indonesia dan dunia');
+('Pelajaran Umum', 'Buku modul SD/SMP/SMA');
+('Art', 'Buku seni');
+
 
 
 INSERT INTO rak_buku (lokasi, genre) VALUES
-('Rak A1', 'Fiksi Indonesia'),
-('Rak A2', 'Non-Fiksi');
+('Rak A1', 'Fiksi Lokal'),
+('Rak A2', 'Fiksi Lokal'),
+('Rak B1', 'Non-Fiksi'),
+('Rak B2', 'Non-Fiksi'),
+('Rak C1', 'Anak-Anak'),
+('Rak C2', 'Agama Islam'),
+('Rak D1', 'Komik'),
+('Rak D2', 'Majalah'),
+('Rak E1', 'Sejarah'),
+('Rak E2', 'Biografi');
+
 
 INSERT INTO peminjam (nama, alamat) VALUES
 ('Anton Sanjoyo', 'Jl. Merdeka No. 10, Jakarta'),
 ('Justinus Lhaksana', 'Jl. Aceh No, 12, Bandung'),
 ('Ahmad Syafiq', 'Jl. Nusa Indah No. 20, Denpasar');
+('Budi Santoso', 'Jl. Merdeka No. 10, Jakarta Pusat'),
+('Siti Nurhaliza', 'Jl. Ahmad Yani No. 5, Bandung'),
+('Ahmad Wijaya', 'Jl. Sudirman No. 20, Surabaya'),
+('Eka Putri', 'Jl. Diponegoro No. 15, Yogyakarta'),
+('Roni Hermanto', 'Jl. Gatot Subroto No. 8, Medan'),
+('Dewi Lestari', 'Jl. Imam Bonjol No. 12, Semarang'),
+('Fajar Nugraha', 'Jl. Hayam Wuruk No. 7, Makassar'),
+('Lina Wijayanti', 'Jl. Pemuda No. 25, Palembang'),
+('Toni Setiawan', 'Jl. Sultan Agung No. 18, Bekasi'),
+('Maya Kusuma', 'Jl. Cendana No. 30, Tangerang');
 
 INSERT INTO petugas (nama, posisi, nomor_hp, email) VALUES
 ('Ayyas Aulia', 'Librarian', '081234567890', 'Ayyas@uilibrary.ac.id'),
 ('Tasrif Muhammad', 'Admin', '082345678901', 'hendra@uilibrary.ac.id');
+('Aditya Bastyas', 'Kepala Librarian', '081234567890', 'aditya@uilibrary.ac.id'),
+('Aska Diliyan', 'Admin Sistem', '082345678901', 'diliyan@uilibrary.ac.id'),
+('Annisa Mardhiyah', 'Librarian', '083456789012', 'annisai@uilibrary.ac.id'),
+('Bambang Irawan', 'Petugas Peminjaman', '084567890123', 'bambang@uilibrary.ac.id'),
+('Nur Azizah', 'Petugas Pengembalian', '085678901234', 'nur@uilibrary.ac.id'),
+('Teguh Prasetyo', 'Petugas Katalog', '086789012345', 'teguh@uilibrary.ac.id'),
+('Azizah Nurrohmah', 'Petugas Referensi', '087890123456', 'azizah@uilibrary.ac.id'),
+('Doni Hermawan', 'Admin Database', '088901234567', 'doni@uilibrary.ac.id'),
+('Lisa Handayani', 'Petugas Arsip', '089012345678', 'lisa@uilibrary.ac.id'),
+('Rudi Habibie', 'Security', '080123456789', 'rudihabibie@uilibrary.ac.id');
 
 INSERT INTO buku (ISBN, judul, penulis, penerbit, tahun, sedang_dipinjam, kategori_id, peminjam_id, petugas_id, rak_buku_id) VALUES
 ('978-6023-2345-1', 'Laskar Pelangi', 'Andrea Hirata', 'Bentang Pustaka', 2005, FALSE, 1, NULL, 1, 1),
