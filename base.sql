@@ -7,7 +7,7 @@ CREATE TABLE kategori (
 CREATE TABLE rak_buku (
   id SERIAL PRIMARY KEY,
   lokasi VARCHAR(64),
-  genre VARCHAR(64)
+  kode_rak VARCHAR(64)
 );
 
 CREATE TABLE peminjam (
@@ -20,24 +20,48 @@ CREATE TABLE peminjam (
 CREATE TABLE petugas (
   id SERIAL PRIMARY KEY,
   nama VARCHAR(64),
-  posisi VARCHAR(64),
-  nomor_hp VARCHAR(64),
-  email VARCHAR(64) UNIQUE
+  posisi VARCHAR(64)
 );
 
 CREATE TABLE buku (
   id SERIAL PRIMARY KEY,
   ISBN INT UNIQUE NOT NULL,
   judul VARCHAR(64),
-  penulis VARCHAR(64),
-  penerbit VARCHAR(64),
-  tahun INT,
-  sedang_dipinjam BOOLEAN,
+  penulis_id INT REFERENCES penulis(id),
+  penerbit_id INT REFERENCES penerbit(id),
+  tahun_terbit INT,
+  jumlah_stok INT,
   kategori_id INT REFERENCES kategori(id),
   peminjam_id INT REFERENCES peminjam(id),
   petugas_id INT REFERENCES petugas(id),
   rak_buku_id INT REFERENCES rak_buku(id)
 );
+
+CREATE TABLE penulis (
+  id SERIAL PRIMARY KEY,
+  nama VARCHAR(64),
+  biografi_singkat TEXT,
+  negara_asal VARCHAR(64)
+)
+
+CREATE TABLE penerbit (
+  id SERIAL PRIMARY KEY,
+  nama VARCHAR(64),
+  alamat VARCHAR(64),
+  email VARCHAR(64)
+)
+
+CREATE TABLE peminjaman (
+ id SERIAL PRIMARY KEY,
+ buku_id IN REFERENCES buku(id),
+ peminjam_id REFERENCES peminjam (id),
+ petugas_id REFERENCES petugas(id),
+ tanggal_pinjam Datetime,
+ tanggal_kembali_rencana Date,
+ tanggal_kembali_aktial Date,
+ denda INT
+)
+
 
 ALTER TABLE buku
 ALTER COLUMN ISBN TYPE VARCHAR(64);
