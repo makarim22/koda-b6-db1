@@ -137,6 +137,42 @@ INSERT INTO buku (ISBN, judul, penulis, penerbit, tahun, sedang_dipinjam, katego
 ('978-6023-2353-6', 'Semua Ikan di Langit', 'ziggy zezsyazeoviennazabrizkie', 'Gramedia', 2005, FALSE, 1, NULL, 1, 1),
 ('978-6023-2354-3', 'Anak Semua Bangsa', 'Pramoedya Ananta Toer', 'Lentera Dipantara', 1980, FALSE, 1, NULL, 2, 1);
 
+INSERT INTO PENERBIT (id, nama_penerbit, alamat, email_kontak) VALUES
+(1, 'Gramedia Pustaka Utama', 'Jl. Palmerah Barat 29-37, Jakarta', 'redaksi@gramedia.com'),
+(2, 'Mizan Pustaka', 'Jl. Cinambo No. 135, Bandung', 'public@mizan.com'),
+(3, 'Elex Media Komputindo', 'Jl. Palmerah Selatan 22, Jakarta', 'elex.media@gramedia.com'),
+(4, 'Penerbit Andi', 'Jl. Beo 38-40, Yogyakarta', 'pemasaran@andipublisher.com'),
+(5, 'Bentang Pustaka', 'Jl. Plemburan No. 1, Yogyakarta', 'bentang.pustaka@gmail.com'),
+(6, 'Republika Penerbit', 'Jl. Pejaten Raya No. 15, Jakarta', 'buku@republika.co.id'),
+(7, 'GagasMedia', 'Jl. Haji Montong No. 57, Jakarta', 'redaksi@gagasmedia.net'),
+(8, 'Penerbit Erlangga', 'Jl. H. Baping Raya No. 100, Jakarta', 'cs@erlangga.co.id'),
+(9, 'Informatika Bandung', 'Jl. Buah Batu No. 121, Bandung', 'info@informatika.co.id'),
+(10, 'Deepublish', 'Jl. Rajawali, Sleman, Yogyakarta', 'cs@deepublish.co.id');
+
+INSERT INTO PENULIS (id, nama_penulis, biografi_singkat, negara_asal) VALUES
+(1, 'Andrea Hirata', 'Penulis novel Laskar Pelangi.', 'Indonesia'),
+(2, 'Tere Liye', 'Penulis prolifik dengan berbagai genre.', 'Indonesia'),
+(3, 'Pramoedya Ananta Toer', 'Sastrawan besar sejarah Indonesia.', 'Indonesia'),
+(4, 'Dee Lestari', 'Penulis seri Supernova dan penyanyi.', 'Indonesia'),
+(5, 'J.K. Rowling', 'Penulis seri Harry Potter.', 'Inggris'),
+(6, 'Raditya Dika', 'Penulis komedi dan sutradara.', 'Indonesia'),
+(7, 'Leila S. Chudori', 'Wartawan dan penulis Laut Bercerita.', 'Indonesia'),
+(8, 'Rhenald Kasali', 'Akademisi dan praktisi bisnis.', 'Indonesia'),
+(9, 'Eka Kurniawan', 'Penulis Cantik Itu Luka.', 'Indonesia'),
+(10, 'Agatha Christie', 'Penulis novel kriminal/detektif.', 'Inggris');
+
+
+INSERT INTO PEMINJAMAN (id, buku_id, peminjam_id, petugas_id, tgl_pinjam, tgl_kembali_rencana, tgl_kembali_aktual, denda) VALUES
+(1, 101, 1, 1, '2024-01-01', '2024-01-08', '2024-01-07', 0),
+(2, 105, 2, 1, '2024-01-02', '2024-01-09', '2024-01-12', 6000),
+(3, 102, 3, 2, '2024-01-05', '2024-01-12', '2024-01-12', 0),
+(4, 101, 4, 2, '2024-01-10', '2024-01-17', '2024-01-15', 0),
+(5, 110, 5, 1, '2024-02-01', '2024-02-08', NULL, 0),
+(6, 103, 1, 2, '2024-02-02', '2024-02-09', '2024-02-15', 12000),
+(7, 108, 6, 1, '2024-02-05', '2024-02-12', '2024-02-11', 0),
+(8, 104, 2, 1, '2024-02-10', '2024-02-17', NULL, 0),
+(9, 109, 7, 2, '2024-02-12', '2024-02-19', '2024-02-25', 12000),
+(10, 107, 8, 1, '2024-02-20', '2024-02-27', '2024-02-26', 0);
 
 select * from buku;
 
